@@ -13,13 +13,13 @@ correct it :
 
     <script>
         var firebaseConfig = {
-          apiKey: "AIzaSyAr0uV9o97StIHDER7YHamFDXScKFMxkyc",
-          authDomain: "notificationproject-f861d.firebaseapp.com",
-          projectId: "notificationproject-f861d",
-          storageBucket: "notificationproject-f861d.appspot.com",
-          messagingSenderId: "77465108928",
-          appId: "1:77465108928:web:bc507e7e79f853ea990825",
-          measurementId: "G-TTWFB9CFZ3"
+          apiKey: "",
+          authDomain: "",
+          projectId: "",
+          storageBucket: "",
+          messagingSenderId: "",
+          appId: "",
+          measurementId: ""
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
@@ -33,7 +33,7 @@ correct it :
               if (permission === "granted") {
                 console.log("Notification permission granted.");
                 return messaging.getToken({ 
-                  vapidKey: 'BHp1Gc0C-WcoXXD43OQgzMJ4Q1BgtAnd9_adIKL4mxtcgH7YpdTy-o0uut1JQyNivXDGXk4gXNRmnxoNOuncx50' 
+                  vapidKey: '' 
                 });
               } else {
                 console.log("Unable to get permission to notify.");
