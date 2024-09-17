@@ -62,14 +62,14 @@
 
 ###### Client side config ################
 
-1. Create a firebase-messaging-sw.js file with the code from your project's firebase-messaging-sw.js file and place \
+1. Create a firebase-messaging-sw.js file with project's firebase-messaging-sw.js file code and place \
    it in the same directory as manage.py. You can copy the firebaseConfig from:
         a. Open the Firebase console (https://console.firebase.google.com/). 
         b. Click on the project you have created. 
         c. Click on the "settings icon" and then click on "Project settings." 
         d. select "General" tab scroll down in "SDK setup and configuration" section and copy the firebaeConfig
 
-2. Create a method in your app's views.py file and include the path of the view in your project's urls.py file. \
+2. Create a method(view) in your app's views.py file and include the endpoint in your project's urls.py file. \
    (Note: Do not include the endpoint in your app's urls.py file.)    
     
     # views.py
