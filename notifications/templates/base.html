@@ -1,0 +1,77 @@
+correct it : 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fcm_token</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-messaging.js"></script>
+
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyAr0uV9o97StIHDER7YHamFDXScKFMxkyc",
+          authDomain: "notificationproject-f861d.firebaseapp.com",
+          projectId: "notificationproject-f861d",
+          storageBucket: "notificationproject-f861d.appspot.com",
+          messagingSenderId: "77465108928",
+          appId: "1:77465108928:web:bc507e7e79f853ea990825",
+          measurementId: "G-TTWFB9CFZ3"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      
+        const messaging = firebase.messaging();
+
+        function initializeMessaging() {
+          Notification.requestPermission()
+            .then(function (permission) {
+              if (permission === "granted") {
+                console.log("Notification permission granted.");
+                return messaging.getToken({ 
+                  vapidKey: 'BHp1Gc0C-WcoXXD43OQgzMJ4Q1BgtAnd9_adIKL4mxtcgH7YpdTy-o0uut1JQyNivXDGXk4gXNRmnxoNOuncx50' 
+                });
+              } else {
+                console.log("Unable to get permission to notify.");
+                throw new Error("Permission not granted for notifications.");
+              }
+            })
+            .then(function (token) {
+              if (token) {
+                console.log("FCM Token:", token);
+              } else {
+                console.log("No registration token available.");
+              }
+            })
+            .catch(function (err) {
+              console.log("An error occurred while retrieving token:", err);
+            });}
+        initializeMessaging();
+
+        // Handle incoming messages
+        messaging.onMessage((payload) => {
+          console.log('Message received. ', payload);
+
+          if (Notification.permission === "granted") {
+                const notificationTitle = payload.notification.title || "New Notification";
+                const notificationOptions = {
+                    body: payload.notification.body || "You have a new message.",
+                    icon: payload.notification.icon || "/default-icon.png"
+                };
+
+                // Display the notification
+                new Notification(notificationTitle, notificationOptions);
+              }          
+        });
+
+    </script>  
+</head>
+
+<body>
+
+</body>
+</html>
