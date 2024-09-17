@@ -128,6 +128,6 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #firebase config
-firebase_creds_path = '/home/gyanu/myproject/notificationproject-f861d-firebase-adminsdk-mz2sh-a2cfe3f438.json'
+firebase_creds_path = '/home/gyanu/firebasePushNotification/firebase-adminsdk.json'
 cred = credentials.Certificate(firebase_creds_path)
 firebase_admin.initialize_app(cred)
