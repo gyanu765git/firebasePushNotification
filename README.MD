@@ -5,14 +5,14 @@
 
 1. Download the "firebase-adminsdk.json" file from: 
 
-    a. Open the Firebase console (https://console.firebase.google.com/). 
-    b. Click on the project you have created. 
-    c. Click on the "settings icon" and then click on "Project settings." 
-    d. Go to the "Service Accounts" tab, then under the Firebase Admin SDK section, select "Python" and  \
-    click "Generate new private key."
+        a. Open the Firebase console (https://console.firebase.google.com/). 
+        b. Click on the project you have created. 
+        c. Click on the "settings icon" and then click on "Project settings." 
+        d. Go to the "Service Accounts" tab, then under the Firebase Admin SDK section, select "Python" and  \
+        click "Generate new private key."
 
 2. Include the "firebase-adminsdk.json" file in your project and install firebase_admin: 
-     "pip install firebase_admin"
+        "pip install firebase_admin"
 
 3. Configure your project settings by pasting the following code into your settings.py file:
 
